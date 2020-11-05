@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Quizo</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,17 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Quizo</h1>
+      <p id='update'></p>
+      <form id='sign-up-form'>
+        <legend>Register</legend>
+        <label for='sign-up-email'>Email</label>
+        <input type='email' name=credentials[email] placeholder="example@e.com">
+        <label for='sign-up-password'>Password</label>
+        <input type='password' name=credentials[password] placeholder='password'>
+        <label for='sign-up-pass_conf'>Password Confirmation</label>
+        <input type='password' name=credentials[password_confirmation] placeholder='password confirmation'>
+        <input type='submit' value='Sign-up!'>
+      </form>
     </body>
 </html>
