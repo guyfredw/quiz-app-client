@@ -14,6 +14,7 @@
     <body>
       <h1>Quizo</h1>
       <p id='update'></p>
+      <!-- sign up form -->
       <form id='sign-up-form'>
         <legend>Register</legend>
         <label for='sign-up-email'>Email</label>
@@ -23,6 +24,15 @@
         <label for='sign-up-pass_conf'>Password Confirmation</label>
         <input type='password' name=credentials[password_confirmation] placeholder='password confirmation'>
         <input type='submit' value='Sign-up!'>
+      </form>
+      <!-- sign in form -->
+      <form id='sign-in-form'>
+        <legend>Log in</legend>
+        <label for='sign-in-email'>Email</label>
+        <input type='email' name=credentials[email] placeholder="example@e.com">
+        <label for='sign-in-password'>Password</label>
+        <input type='password' name=credentials[password] placeholder='password'>
+        <input type='submit' value='Sign-in!'>
       </form>
     </body>
 </html>
