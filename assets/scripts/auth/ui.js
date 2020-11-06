@@ -1,3 +1,4 @@
+const store = require('./../store')
 
 const onSignUpSuccess = function (response) {
   $('#update').html('You have successfully signed-up as: ' + response.user.email)
@@ -10,6 +11,8 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (response) {
+  console.log(response.user.token)
+  store.user = response.user
   $('#update').html('You have successfully signed-in as: ' + response.user.email)
   $('form').trigger('reset')
 }
@@ -19,9 +22,32 @@ const onSignInFailure = function () {
   $('form').trigger('reset')
 }
 
+const onChangePwSuccess = function () {
+  $('#update').html('The password was change successfully')
+  $('form').trigger('reset')
+}
+
+const onChangePwFail = function () {
+  $('#update').html('Failed to change password')
+  $('form').trigger('reset')
+}
+
+const onSignOutSuccess = function () {
+  $('#update').html('Successfully signed out')
+  store.user = null
+}
+
+const onSignOutFail = function () {
+  $('#update').html('Failed to sign-out')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
-  onSignInFailure
+  onSignInFailure,
+  onChangePwSuccess,
+  onChangePwFail,
+  onSignOutSuccess,
+  onSignOutFail
 }
