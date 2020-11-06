@@ -4,6 +4,7 @@
 // const example = require('./example')
 
 const events = require('./auth/events')
+const quizEvents = require('./quiz/events')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
@@ -16,4 +17,6 @@ $(() => {
   $('#change-pass-form').on('submit', events.onChangePass)
   // Sign out
   $('#sign-out-form').on('submit', events.onSignOut)
+  // Index quizzes
+  $('#index-quiz-form').on('submit', quizEvents.onGetQuizzes)
 })
