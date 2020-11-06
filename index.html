@@ -51,5 +51,30 @@
       <form id='index-quiz-form'>
         <input type='submit' value='All Quizzes'>
       </form>
+
+      <div id='display-quizzes'></div>
+     <!-- when the user clicks on create quiz -->
+      <form id='create-quiz'>
+        <input type='submit' value='Create Quiz'>
+      </form>
+      <!-- show this form where the user can input the question and answer -->
+      <form id='create-quiz-form'>
+        <legend>Create Question:</legend>
+        <label for='question'>Question</label>
+        <input type='text' name=quiz[text] placeholder='Question'>
+        <label for='answer'>Answer:</label>
+        <label for='true'>True</label>
+        <input type='radio' name=quiz[isCorrect] value='true'>
+        <label for='false'>False</label>
+        <input type='radio' name=quiz[isCorrect] value='false'>
+        <input type='submit' value='Create!'>
+      </form>
+      <!-- delete form -->
+      <form id='delete-quiz-form'>
+        <legend>Delete Form</legend>
+        <label for='QuizId'>Quiz ID</label>
+        <input type='text' name=credentials[id] placeholder='ID'>
+        <input type='submit' value='Delete'>
+      </form>
     </body>
 </html>

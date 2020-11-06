@@ -5,6 +5,7 @@
 
 const events = require('./auth/events')
 const quizEvents = require('./quiz/events')
+const getFormFields = require('./../../lib/get-form-fields')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
@@ -19,4 +20,11 @@ $(() => {
   $('#sign-out-form').on('submit', events.onSignOut)
   // Index quizzes
   $('#index-quiz-form').on('submit', quizEvents.onGetQuizzes)
+  // Create
+  // Hide the create quiz form
+  $('#create-quiz-form').hide()
+  // When create quiz is clicked show the form
+  $('#create-quiz').on('submit', quizEvents.onShowCreateForm)
+  // When the create form is shown, now we can create a quiz
+  $('#create-quiz-form').on('submit', quizEvents.onCreateQuiz)
 })
