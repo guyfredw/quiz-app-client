@@ -22,7 +22,18 @@ const createQuiz = function (data) {
   })
 }
 
+const deleteQuiz = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/quizzes/' + data.credentials.id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    method: 'DELETE'
+  })
+}
+
 module.exports = {
   getQuizzes,
-  createQuiz
+  createQuiz,
+  deleteQuiz
 }

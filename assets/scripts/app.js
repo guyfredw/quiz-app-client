@@ -27,4 +27,6 @@ $(() => {
   $('#create-quiz').on('submit', quizEvents.onShowCreateForm)
   // When the create form is shown, now we can create a quiz
   $('#create-quiz-form').on('submit', quizEvents.onCreateQuiz)
+  // To delete a quiz
+  $('#delete-quiz-form').on('submit', quizEvents.onDeleteQuiz)
 })

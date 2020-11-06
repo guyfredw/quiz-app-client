@@ -5,6 +5,7 @@ const onGetQuizzesSuccess = function (response) {
   response.quizzes.forEach(quiz => {
     $('#display-quizzes').append(`
       <h5> ${quiz.text} </h5>
+      <h6> ${quiz._id} </h6>
       <p> A) True </p>
       <p> B) False </p>
       <p> Answer: ${quiz.isCorrect}</p>

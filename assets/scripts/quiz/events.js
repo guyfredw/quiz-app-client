@@ -33,8 +33,19 @@ const onCreateQuiz = function (event) {
     .catch(ui.onCreateFail)
 }
 
+const onDeleteQuiz = function (event) {
+  event.preventDefault()
+  const form = event.target
+
+  const data = getFormFields(form)
+
+  console.log(data)
+  api.deleteQuiz(data)
+}
+
 module.exports = {
   onGetQuizzes,
   onShowCreateForm,
-  onCreateQuiz
+  onCreateQuiz,
+  onDeleteQuiz
 }
