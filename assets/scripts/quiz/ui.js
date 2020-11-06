@@ -31,10 +31,22 @@ const onCreateFail = function () {
   $('form').trigger('reset')
 }
 
+const onDeleteSuccess = function () {
+  $('#update').html('Quiz successfully deleted')
+  $('form').trigger('reset')
+}
+
+const onDeleteFail = function () {
+  $('#update').html('Delete failed')
+  $('form').trigger('reset')
+}
+
 module.exports = {
   onGetQuizzesSuccess,
   onGetQuizzesFail,
   showCreateForm,
   onCreateSuccess,
-  onCreateFail
+  onCreateFail,
+  onDeleteSuccess,
+  onDeleteFail
 }

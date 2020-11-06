@@ -41,6 +41,8 @@ const onDeleteQuiz = function (event) {
 
   console.log(data)
   api.deleteQuiz(data)
+    .then(ui.onDeleteSuccess)
+    .catch(ui.onDeleteFail)
 }
 
 module.exports = {

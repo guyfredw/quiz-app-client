@@ -29,4 +29,5 @@ $(() => {
   $('#create-quiz-form').on('submit', quizEvents.onCreateQuiz)
   // To delete a quiz
   $('#delete-quiz-form').on('submit', quizEvents.onDeleteQuiz)
+  // Update quiz
 })
