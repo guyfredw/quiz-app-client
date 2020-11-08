@@ -1,6 +1,7 @@
 const config = require('./../config')
 const store = require('./../store')
 
+// Index
 const getQuizzes = function () {
   return $.ajax({
     url: config.apiUrl + '/quizzes',
@@ -11,6 +12,7 @@ const getQuizzes = function () {
   })
 }
 
+// CREATE
 const createQuiz = function (data) {
   return $.ajax({
     url: config.apiUrl + '/quizzes',
@@ -22,6 +24,7 @@ const createQuiz = function (data) {
   })
 }
 
+// DELETE
 const deleteQuiz = function (data) {
   return $.ajax({
     url: config.apiUrl + '/quizzes/' + data.credentials.id,
@@ -32,8 +35,22 @@ const deleteQuiz = function (data) {
   })
 }
 
+// UPDATE
+
+const updateQuiz = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/quizzes/' + data.credentials.id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data,
+    method: 'PATCH'
+  })
+}
+
 module.exports = {
   getQuizzes,
   createQuiz,
-  deleteQuiz
+  deleteQuiz,
+  updateQuiz
 }

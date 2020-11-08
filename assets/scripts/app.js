@@ -5,7 +5,7 @@
 
 const events = require('./auth/events')
 const quizEvents = require('./quiz/events')
-const getFormFields = require('./../../lib/get-form-fields')
+// const getFormFields = require('./../../lib/get-form-fields')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
@@ -30,4 +30,5 @@ $(() => {
   // To delete a quiz
   $('#delete-quiz-form').on('submit', quizEvents.onDeleteQuiz)
   // Update quiz
+  $('#update-quiz-form').on('submit', quizEvents.onUpdateQuiz)
 })

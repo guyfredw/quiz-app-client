@@ -1,4 +1,4 @@
-const store = require('./../store')
+// const store = require('./../store')
 
 const onGetQuizzesSuccess = function (response) {
   console.log(response)
@@ -41,6 +41,16 @@ const onDeleteFail = function () {
   $('form').trigger('reset')
 }
 
+const onUpdateSuccess = function () {
+  $('#update').html('Update was successfull')
+  $('form').trigger('reset')
+}
+
+const onUpdateFail = function () {
+  $('#update').html('Update failed')
+  $('form').trigger('reset')
+}
+
 module.exports = {
   onGetQuizzesSuccess,
   onGetQuizzesFail,
@@ -48,5 +58,7 @@ module.exports = {
   onCreateSuccess,
   onCreateFail,
   onDeleteSuccess,
-  onDeleteFail
+  onDeleteFail,
+  onUpdateSuccess,
+  onUpdateFail
 }

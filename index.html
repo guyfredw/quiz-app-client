@@ -77,5 +77,18 @@
         <input type='submit' value='Delete'>
       </form>
       <!-- update form -->
+      <form id='update-quiz-form'>
+        <legend>Update Quiz</legend>
+        <label for='QuizId'>Quiz ID</label>
+        <input type='text' name=credentials[id] placeholder='ID'>
+        <label for='question'>Question</label>
+        <input type='text' name=quiz[text] placeholder='Question'>
+        <label for='answer'>Answer:</label>
+        <label for='true'>True</label>
+        <input type='radio' name=quiz[isCorrect] value='true'>
+        <label for='false'>False</label>
+        <input type='radio' name=quiz[isCorrect] value='false'>
+        <input type='submit' value='Update'>
+      </form>
     </body>
 </html>
