@@ -31,4 +31,8 @@ $(() => {
   $('#delete-quiz-form').on('submit', quizEvents.onDeleteQuiz)
   // Update quiz
   $('#update-quiz-form').on('submit', quizEvents.onUpdateQuiz)
+  // Take quiz form
+  $('#take-quiz').on('submit', quizEvents.onShowQuiz)
+  // Test quiz form
+  $('#show-quiz').on('submit', quizEvents.onTakeQuiz)
 })

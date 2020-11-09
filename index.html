@@ -71,7 +71,7 @@
       </form>
       <!-- delete form -->
       <form id='delete-quiz-form'>
-        <legend>Delete Form</legend>
+        <legend>Delete</legend>
         <label for='QuizId'>Quiz ID</label>
         <input type='text' name=credentials[id] placeholder='ID'>
         <input type='submit' value='Delete'>
@@ -90,5 +90,14 @@
         <input type='radio' name=quiz[isCorrect] value='false'>
         <input type='submit' value='Update'>
       </form>
+      <!-- take quiz form -->
+      <form id='take-quiz'>
+        <legend>Take quiz</legend>
+        <label for='QuizId'>Quiz ID</label>
+        <input type='text' name=credentials[id] placeholder='ID'>
+        <input type='submit' value='Take quiz!'>
+      </form>
+      <form id='show-quiz'></form>
+      <p id='result'></p>
     </body>
 </html>

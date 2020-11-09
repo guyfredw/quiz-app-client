@@ -1,7 +1,9 @@
-// const store = require('./../store')
+const store = require('./../store')
 
 const onGetQuizzesSuccess = function (response) {
-  // console.log(response)
+  // clear the display quiz div
+  $('#display-quizzes').html('')
+  // display all the quizzes
   response.quizzes.forEach(quiz => {
     $('#display-quizzes').append(`
       <h5> ${quiz.text} </h5>
@@ -51,6 +53,47 @@ const onUpdateFail = function () {
   $('form').trigger('reset')
 }
 
+const onShowQuizSuccess = function (response) {
+  store.isCorrect = null
+  $('#update').html('Quiz shown successfully')
+  // console.log(response)
+  displayQuiz(response)
+  store.isCorrect = response.quiz.isCorrect
+  $('form').trigger('reset')
+}
+
+const onShowQuizFail = function () {
+  $('#update').html('Show quiz failed')
+  $('form').trigger('reset')
+}
+
+// function called by onShowQuizSuccess to display the quiz in the browser
+const displayQuiz = function (response) {
+  $('#show-quiz').html('')
+  $('#show-quiz').append(`
+    <h5> ${response.quiz.text} </h5>
+    <label for='false'>True</label>
+    <input type='radio' name=quiz[isCorrect] value='true'>
+    <label for='false'>False</label>
+    <input type='radio' name=quiz[isCorrect] value=''>
+    <input type='submit' value='Submit'>
+    `)
+  // to facilitate the comparison between the strings it is easier
+  // to use a falsy value for the false radio input
+}
+
+// if the answer is correct
+const correctAnswer = function () {
+  $('#result').text('')
+  $('#result').text('Correct!')
+}
+
+// if the answer is false
+const wrongAnswer = function () {
+  $('#result').text('')
+  $('#result').text('False. Try again.')
+}
+
 module.exports = {
   onGetQuizzesSuccess,
   onGetQuizzesFail,
@@ -60,5 +103,9 @@ module.exports = {
   onDeleteSuccess,
   onDeleteFail,
   onUpdateSuccess,
-  onUpdateFail
+  onUpdateFail,
+  onShowQuizSuccess,
+  onShowQuizFail,
+  correctAnswer,
+  wrongAnswer
 }

@@ -48,9 +48,22 @@ const updateQuiz = function (data) {
   })
 }
 
+// SHOW
+
+const showQuiz = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/quizzes/' + data.credentials.id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    method: 'GET'
+  })
+}
+
 module.exports = {
   getQuizzes,
   createQuiz,
   deleteQuiz,
-  updateQuiz
+  updateQuiz,
+  showQuiz
 }
