@@ -1,7 +1,7 @@
 // const store = require('./../store')
 
 const onGetQuizzesSuccess = function (response) {
-  console.log(response)
+  // console.log(response)
   response.quizzes.forEach(quiz => {
     $('#display-quizzes').append(`
       <h5> ${quiz.text} </h5>
