@@ -27,7 +27,7 @@ const onCreateQuiz = function (event) {
 
   const data = getFormFields(form)
 
-  console.log(data)
+  // console.log(data)
   api.createQuiz(data)
     .then(ui.onCreateSuccess)
     .catch(ui.onCreateFail)
@@ -39,7 +39,7 @@ const onDeleteQuiz = function (event) {
 
   const data = getFormFields(form)
 
-  console.log(data)
+  // console.log(data)
   api.deleteQuiz(data)
     .then(ui.onDeleteSuccess)
     .catch(ui.onDeleteFail)
@@ -52,7 +52,7 @@ const onUpdateQuiz = function (event) {
 
   const data = getFormFields(form)
 
-  console.log(data)
+  // console.log(data)
 
   api.updateQuiz(data)
     .then(ui.onUpdateSuccess)
