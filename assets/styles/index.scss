@@ -1,1 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
+
+.form-row {
+  width: 50%;
+  max-width: 465px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #a4d2fc;
+  border-radius: 5px;
+  padding: 5px;
+}
