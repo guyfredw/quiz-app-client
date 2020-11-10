@@ -109,9 +109,11 @@
   <!-- when the user clicks on create quiz -->
     <div class='container'>
       <form id='create-quiz' class='form-inline'>
-        <button id='create-btn' type='submit' class='btn btn-success'>Create Quiz</button>
-        <button id='index-btn' type='submit' class='btn btn-info'>My Quizzes</button>
-        <button id='delete-btn' type='submit' class='btn btn-danger'>Delete Quiz</button>
+        <button id='create' type='submit' class='btn btn-success'>Create Quiz</button>
+        <button id='index' type='submit' class='btn btn-info'>My Quizzes</button>
+        <button id='delete' type='submit' class='btn btn-danger'>Delete Quiz</button>
+        <button id='change' type='submit' class='btn btn-success'>Update Quiz</button>
+        <button id='take' type='submit' class='btn btn-primary'>Take A Quiz</button>
       </form>
     </div>
       <!-- sign out -->
@@ -190,7 +192,7 @@
 
       <!-- update form -->
       <div class='container'>
-      <form id='update-quiz-form'>
+      <form id='change-quiz-form'>
         <div class='row'>
           <div class='col-12'>
         <legend>Update Quiz</legend>
@@ -232,7 +234,7 @@
     </div>
       <!-- take quiz form -->
       <div class='container'>
-      <form id='take-quiz'>
+      <form id='take-quiz-form'>
         <div class='row del-row'>
           <div class='col-12'>
         <legend>Take quiz</legend>

@@ -14,13 +14,6 @@ const onGetQuizzes = function (event) {
     .catch(ui.onGetQuizzesFail)
 }
 
-// on show create quiz form
-const onShowCreateForm = function (event) {
-  event.preventDefault()
-
-  ui.showCreateForm()
-}
-
 // After the quiz form is shown we can create a quiz
 const onCreateQuiz = function (event) {
   event.preventDefault()
@@ -96,20 +89,22 @@ const onTakeQuiz = function (event) {
   }
 }
 
-const onShowDeleteForm = function (event) {
+const onShowForm = function (event) {
   event.preventDefault()
+  // console.log(event.target)
+  // console.log(event.target.id)
 
-  console.log(event.target)
-  $('#delete-quiz-form').toggle()
+  // Get the id of the button and based on what form is required
+  // toggle the form
+  $(`#${event.target.id}-quiz-form`).toggle()
 }
 
 module.exports = {
   onGetQuizzes,
-  onShowCreateForm,
   onCreateQuiz,
   onDeleteQuiz,
   onUpdateQuiz,
   onShowQuiz,
   onTakeQuiz,
-  onShowDeleteForm
+  onShowForm
 }

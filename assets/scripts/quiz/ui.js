@@ -25,10 +25,6 @@ const onGetQuizzesFail = function () {
   $('#update').html('Failed to get quizzes')
 }
 
-const showCreateForm = function () {
-  $('#create-quiz-form').show()
-}
-
 const onCreateSuccess = function () {
   $('#update').html('Question successfully created')
   $('form').trigger('reset')
@@ -104,7 +100,6 @@ const wrongAnswer = function () {
 module.exports = {
   onGetQuizzesSuccess,
   onGetQuizzesFail,
-  showCreateForm,
   onCreateSuccess,
   onCreateFail,
   onDeleteSuccess,
