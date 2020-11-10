@@ -96,6 +96,13 @@ const onTakeQuiz = function (event) {
   }
 }
 
+const onShowDeleteForm = function (event) {
+  event.preventDefault()
+
+  console.log(event.target)
+  $('#delete-quiz-form').toggle()
+}
+
 module.exports = {
   onGetQuizzes,
   onShowCreateForm,
@@ -103,5 +110,6 @@ module.exports = {
   onDeleteQuiz,
   onUpdateQuiz,
   onShowQuiz,
-  onTakeQuiz
+  onTakeQuiz,
+  onShowDeleteForm
 }

@@ -19,12 +19,12 @@ $(() => {
   // Sign out
   $('#sign-out-form').on('submit', events.onSignOut)
   // Index quizzes
-  $('#index-quiz-form').on('submit', quizEvents.onGetQuizzes)
+  $('#index-btn').on('click', quizEvents.onGetQuizzes)
   // Create
   // Hide the create quiz form
   $('#create-quiz-form').hide()
-  // When create quiz is clicked show the form
-  $('#create-quiz').on('submit', quizEvents.onShowCreateForm)
+  // When create quiz button is clicked show the form
+  $('#create-btn').on('click', quizEvents.onShowCreateForm)
   // When the create form is shown, now we can create a quiz
   $('#create-quiz-form').on('submit', quizEvents.onCreateQuiz)
   // To delete a quiz
@@ -37,4 +37,8 @@ $(() => {
   $('#show-quiz').on('submit', quizEvents.onTakeQuiz)
   // hide myTest
   $('#myTest').hide()
+  // hide the functionalities forms
+  $('#delete-quiz-form').hide()
+  // show the delete quiz form when the user clicks on the delete button
+  $('#delete-btn').on('click', quizEvents.onShowDeleteForm)
 })
