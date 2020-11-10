@@ -35,4 +35,6 @@ $(() => {
   $('#take-quiz').on('submit', quizEvents.onShowQuiz)
   // Test quiz form
   $('#show-quiz').on('submit', quizEvents.onTakeQuiz)
+  // hide myTest
+  $('#myTest').hide()
 })

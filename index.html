@@ -12,13 +12,11 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div class='page-header'>
       <h1>Quizo</h1>
-    </div>
       <p id='update'></p>
       <!-- sign up form -->
+      <div class='container sign-up'>
       <form id='sign-up-form'>
-        <div class='container sign-up'>
         <div class='form-row'>
         <div class='col-12'>
         <legend>Register</legend>
@@ -39,81 +37,191 @@
         <button type='submit' class="btn btn-primary">Sign-Up!</button>
       </div>
       </div>
+      </form>
+      </div>
+
+      <!-- sign in form -->
+      <div class='container'>
+      <form id='sign-in-form'>
+          <div class='form-row'>
+        <div class='col-12'>
+        <legend>Log in</legend>
+      </div>
+        <div class='form-group col-12'>
+        <label for='sign-in-email' class='sr-only'>Email</label>
+        <input type='email' class="form-control" name=credentials[email] placeholder="example@e.com">
+      </div>
+      <div class='form-group col-12'>
+        <label for='sign-in-password' class='sr-only'>Password</label>
+        <input type='password' class="form-control" name=credentials[password] placeholder='password'>
+      </div>
+      <div class='col-12'>
+        <button type='submit' class='btn btn-primary'>Sign-In!</button>
+      </div>
+    </div>
+    </form>
+    </div>
+
+
+      <!-- change password form -->
+      <div class='container'>
+      <form id='change-pass-form'>
+        <div class='form-row'>
+          <div class='col-12'>
+        <legend>Change Password</legend>
+      </div>
+      <div class='form-group col-12'>
+        <label for='Old Password' class='sr-only'>Old Password</label>
+        <input type='password' class="form-control" name=passwords[old] placeholder='Old password'>
+      </div>
+      <div class='form-group col-12'>
+        <label for='New Password' class='sr-only'>New Password</label>
+        <input type='password' class="form-control" name=passwords[new] placeholder='New password'>
+      </div>
+      <div class='col-12'>
+        <button type='submit' class='btn btn-primary'>Submit!</button>
+      </div>
       </div>
       </form>
-      <!-- sign in form -->
-      <form id='sign-in-form'>
-        <legend>Log in</legend>
-        <label for='sign-in-email'>Email</label>
-        <input type='email' name=credentials[email] placeholder="example@e.com">
-        <label for='sign-in-password'>Password</label>
-        <input type='password' name=credentials[password] placeholder='password'>
-        <input type='submit' value='Sign-in!'>
-      </form>
-      <!-- change password form -->
-      <form id='change-pass-form'>
-        <legend>Change Password</legend>
-        <label for='Old Password'>Old Password</label>
-        <input type='password' name=passwords[old] placeholder='Old'>
-        <label for='New Password'>New Password</label>
-        <input type='password' name=passwords[new] placeholder='New'>
-        <input type='submit' value='Submit!'>
-      </form>
+    </div>
       <!-- sign out -->
       <form id='sign-out-form'>
-        <input type='submit' value='Sign Out!'>
+        <button type='submit' class='btn btn-danger'>Sign-out!</button>
       </form>
       <!-- show quizzes -->
       <form id='index-quiz-form'>
-        <input type='submit' value='All Quizzes'>
+        <button type='submit' class='btn btn-info'>My Quizzes</button>
       </form>
 
+      <div class='container'>
       <div id='display-quizzes'></div>
+    </div>
      <!-- when the user clicks on create quiz -->
       <form id='create-quiz'>
-        <input type='submit' value='Create Quiz'>
+        <button type='submit' class='btn btn-success'>Create Quiz</button>
       </form>
       <!-- show this form where the user can input the question and answer -->
+      <div class='container'>
       <form id='create-quiz-form'>
+      <div class='row'>
+          <div class='col-12'>
         <legend>Create Question:</legend>
-        <label for='question'>Question</label>
-        <input type='text' name=quiz[text] placeholder='Question'>
-        <label for='answer'>Answer:</label>
-        <label for='true'>True</label>
-        <input type='radio' name=quiz[isCorrect] value='true'>
-        <label for='false'>False</label>
-        <input type='radio' name=quiz[isCorrect] value='false'>
-        <input type='submit' value='Create!'>
+      </div>
+    </div>
+    <div class='form-group row'>
+        <label for='question' class='col-sm-2 col-form-label'>Question:</label>
+      <div class='form-group col-8'>
+        <input type='text' class='form-control' name=quiz[text] placeholder='Question'>
+      </div>
+    </div>
+      <fieldset class='form-group'>
+        <div class='row'>
+        <legend class='col-form-label col-sm-2 pt-0'>Answer:</legend>
+        <div class='col-10'>
+      <div class='form-check'>
+        <input class="form-check-input" type='radio' name=quiz[isCorrect] value='true'>
+        <label class="form-check-label" for='true'>True</label>
+      </div>
+      <div class='form-check'>
+        <input class="form-check-input" type='radio' name=quiz[isCorrect] value='false'>
+        <label class="form-check-label" for='false'>False</label>
+      </div>
+    </div>
+  </div>
+  </fieldset>
+  <div class='form-group row'>
+    <div class='col-12'>
+        <button type='submit' class='btn btn-success'>Create!</button>
+      </div>
+    </div>
       </form>
+    </div>
       <!-- delete form -->
+      <div class='container'>
       <form id='delete-quiz-form'>
+        <div class='row del-row'>
+          <div class='col-12'>
         <legend>Delete</legend>
-        <label for='QuizId'>Quiz ID</label>
-        <input type='text' name=credentials[id] placeholder='ID'>
-        <input type='submit' value='Delete'>
+      </div>
+        <div class='form-group col-2'>
+        <label for='QuizId' class='col-form-label'>Quiz ID</label>
+      </div>
+      <div class='form-group col-10'>
+        <input type='text' class='form-control' name=credentials[id] placeholder='ID'>
+      </div>
+      <div class='form-group col-12'>
+        <button type='submit' class='btn btn-danger'>Delete</button>
+      </div>
+    </div>
       </form>
+    </div>
+
       <!-- update form -->
+      <div class='container'>
       <form id='update-quiz-form'>
+        <div class='row'>
+          <div class='col-12'>
         <legend>Update Quiz</legend>
-        <label for='QuizId'>Quiz ID</label>
-        <input type='text' name=credentials[id] placeholder='ID'>
-        <label for='question'>Question</label>
-        <input type='text' name=quiz[text] placeholder='Question'>
-        <label for='answer'>Answer:</label>
-        <label for='true'>True</label>
-        <input type='radio' name=quiz[isCorrect] value='true'>
-        <label for='false'>False</label>
-        <input type='radio' name=quiz[isCorrect] value='false'>
-        <input type='submit' value='Update'>
+      </div>
+    </div>
+    <div class='form-group row'>
+        <label class='col-sm-2 col-form-label' for='QuizId'>Quiz ID</label>
+        <div class='form-group col-8'>
+        <input type='text' class='form-control' name=credentials[id] placeholder='ID'>
+      </div>
+    </div>
+    <div class='form-group row'>
+        <label class='col-sm-2 col-form-label' for='question'>Question</label>
+        <div class='form-group col-8'>
+        <input type='text' class='form-control' name=quiz[text] placeholder='Question'>
+      </div>
+      </div>
+      <fieldset class='form-group'>
+        <div class='row'>
+        <legend class='col-form-label col-sm-2 pt-0'>Answer:</legend>
+        <div class='col-10'>
+      <div class='form-check'>
+        <input class="form-check-input" type='radio' name=quiz[isCorrect] value='true'>
+        <label class="form-check-label" for='true'>True</label>
+      </div>
+      <div class='form-check'>
+        <input class="form-check-input" type='radio' name=quiz[isCorrect] value='false'>
+        <label class="form-check-label" for='false'>False</label>
+      </div>
+    </div>
+  </div>
+  </fieldset>
+      <div class='form-group row'>
+        <div class='col-12'>
+        <button type='submit' class='btn btn-success'> Update! </button>
+      </div>
+    </div>
       </form>
+    </div>
       <!-- take quiz form -->
+      <div class='container'>
       <form id='take-quiz'>
+        <div class='row del-row'>
+          <div class='col-12'>
         <legend>Take quiz</legend>
+      </div>
+      <div class='form-group col-2'>
         <label for='QuizId'>Quiz ID</label>
-        <input type='text' name=credentials[id] placeholder='ID'>
-        <input type='submit' value='Take quiz!'>
+      </div>
+      <div class='form-group col-10'>
+        <input type='text' name=credentials[id] class='form-control' placeholder='ID'>
+        </div>
+        <div class='form-group col-12' id='btn-div'>
+        <button type='submit' class='btn btn-primary'>Take Quiz!</button>
+      </div>
+      </div>
       </form>
+    </div>
+    <div class='container'>
+      <div id='myTest'>
       <form id='show-quiz'></form>
       <p id='result'></p>
+    </div>
+    </div>
     </body>
 </html>

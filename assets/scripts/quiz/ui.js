@@ -3,14 +3,20 @@ const store = require('./../store')
 const onGetQuizzesSuccess = function (response) {
   // clear the display quiz div
   $('#display-quizzes').html('')
+  // set the height for the display
+  $('#display-quizzes').css('height', '200px')
+  $('#display-quizzes').css('border', 'solid gray')
+  $('#display-quizzes').css('border-width', '1px')
+
   // display all the quizzes
   response.quizzes.forEach(quiz => {
     $('#display-quizzes').append(`
+      <div class='myQuiz'>
       <h5> ${quiz.text} </h5>
       <h6> ${quiz._id} </h6>
       <p> A) True </p>
       <p> B) False </p>
-      <p> Answer: ${quiz.isCorrect}</p>
+      </div>
       `)
   })
 }
@@ -69,6 +75,7 @@ const onShowQuizFail = function () {
 
 // function called by onShowQuizSuccess to display the quiz in the browser
 const displayQuiz = function (response) {
+  $('#myTest').show()
   $('#show-quiz').html('')
   $('#show-quiz').append(`
     <h5> ${response.quiz.text} </h5>
@@ -76,7 +83,7 @@ const displayQuiz = function (response) {
     <input type='radio' name=quiz[isCorrect] value='true'>
     <label for='false'>False</label>
     <input type='radio' name=quiz[isCorrect] value=''>
-    <input type='submit' value='Submit'>
+    <button type='submit' class='btn btn-primary'>Submit</button>
     `)
   // to facilitate the comparison between the strings it is easier
   // to use a falsy value for the false radio input

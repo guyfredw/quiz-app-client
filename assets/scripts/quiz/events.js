@@ -88,6 +88,7 @@ const onTakeQuiz = function (event) {
   console.log('isCorrect: ' + store.isCorrect)
 
   const myAnswer = Boolean(data.quiz.isCorrect)
+
   if (myAnswer === store.isCorrect) {
     ui.correctAnswer()
   } else if (myAnswer !== store.isCorrect) {
