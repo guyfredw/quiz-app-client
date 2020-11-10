@@ -1,16 +1,21 @@
 const store = require('./../store')
 
 const onGetQuizzesSuccess = function (response) {
-  // clear the display quiz div
-  $('#display-quizzes').html('')
-  // set the height for the display
-  $('#display-quizzes').css('height', '200px')
-  $('#display-quizzes').css('border', 'solid gray')
-  $('#display-quizzes').css('border-width', '1px')
-
+  // console.log(response)
+  // if the user does not have nay quizzes created
+  if (response.quizzes.length === 0) {
+    $('#update').text('You do not have any quizzes')
+  } else {
   // display all the quizzes
-  response.quizzes.forEach(quiz => {
-    $('#display-quizzes').append(`
+  // clear the display quiz div
+    $('#display-quizzes').html('')
+    // set the height for the display
+    $('#display-quizzes').css('height', '200px')
+    $('#display-quizzes').css('border', 'solid gray')
+    $('#display-quizzes').css('border-width', '1px')
+
+    response.quizzes.forEach(quiz => {
+      $('#display-quizzes').append(`
       <div class='myQuiz'>
       <h5> ${quiz.text} </h5>
       <h6> ${quiz._id} </h6>
@@ -18,7 +23,8 @@ const onGetQuizzesSuccess = function (response) {
       <p> B) False </p>
       </div>
       `)
-  })
+    })
+  }
 }
 
 const onGetQuizzesFail = function () {

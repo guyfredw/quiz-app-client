@@ -77,8 +77,8 @@ const onTakeQuiz = function (event) {
 
   const data = getFormFields(form)
 
-  console.log(data.quiz.isCorrect)
-  console.log('isCorrect: ' + store.isCorrect)
+  // console.log(data.quiz.isCorrect)
+  // console.log('isCorrect: ' + store.isCorrect)
 
   const myAnswer = Boolean(data.quiz.isCorrect)
 
