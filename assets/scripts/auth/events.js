@@ -50,9 +50,28 @@ const onSignOut = function (event) {
     .catch(ui.onSignOutFail)
 }
 
+const onShowForm = function (event) {
+  event.preventDefault()
+
+  $(`#${event.target.id}-form`).toggle()
+}
+
+const onSwitchForm = function (event) {
+  event.preventDefault()
+
+  if (event.target.id === 'sign-in-link') {
+    $('#sign-in-form').show()
+    $('#sign-up-form').hide()
+  } else if (event.target.id === 'sign-up-link') {
+    $('#sign-in-form').hide()
+    $('#sign-up-form').show()
+  }
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePass,
-  onSignOut
+  onSignOut,
+  onShowForm,
+  onSwitchForm
 }

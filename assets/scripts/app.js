@@ -41,9 +41,25 @@ $(() => {
   $('#delete-quiz-form').hide()
   $('#change-quiz-form').hide()
   $('#take-quiz-form').hide()
+  // hide the change password form
+  $('#change-pass-form').hide()
+  // hide the sign in form
+  $('#sign-in-form').hide()
   // show the delete quiz form when the user clicks on the delete button
   $('#delete').on('click', quizEvents.onShowForm)
   $('#change').on('click', quizEvents.onShowForm)
   $('#take').on('click', quizEvents.onShowForm)
-  // show update form
+  // show auth forms
+  // show change password form
+  $('#change-pass').on('click', events.onShowForm)
+  // hide the menu
+  $('#menu-btns').hide()
+  // hide the change pass btn
+  $('#change-pass').hide()
+  // hide the signout btn
+  $('#sign-out-btn').hide()
+  // when the user clicks the log in link tag from the register form
+  $('#sign-in-link').on('click', events.onSwitchForm)
+  // when the user clicks the sign up link tag from the sign up form
+  $('#sign-up-link').on('click', events.onSwitchForm)
 })

@@ -27,10 +27,14 @@
       <!-- sign out -->
       <li>
       <form id='sign-out-form' class='form-inline'>
-        <button type='submit' class='btn btn-danger'>Sign-out!</button>
+        <button type='submit' id='sign-out-btn' class='btn btn-danger'>Sign-out!</button>
       </form>
     </li>
-
+    <li>
+      <button type='submit' id='change-pass' class='btn btn-primary'>Change Password</button>
+    </li>
+  </ul>
+</div>
       </nav>
 
       <h1>Quizo</h1>
@@ -57,6 +61,9 @@
       <div class='col-12'>
         <button type='submit' class='btn btn-primary'>Sign-Up!</button>
       </div>
+      <div class='col-12'>
+        <p>Already have an account? <a href='#' id='sign-in-link'>Log-in</a>
+      </div>
       </div>
       </form>
       </div>
@@ -78,6 +85,9 @@
       </div>
       <div class='col-12'>
         <button type='submit' class='btn btn-primary'>Sign-In!</button>
+      </div>
+      <div class='col-12'>
+        <p>Already have an account? <a href='#' id='sign-up-link'>Sign-Up</a>
       </div>
     </div>
     </form>
@@ -108,7 +118,7 @@
 
   <!-- when the user clicks on create quiz -->
     <div class='container'>
-      <form id='create-quiz' class='form-inline'>
+      <form id='menu-btns' class='form-inline'>
         <button id='create' type='submit' class='btn btn-success'>Create Quiz</button>
         <button id='index' type='submit' class='btn btn-info'>My Quizzes</button>
         <button id='delete' type='submit' class='btn btn-danger'>Delete Quiz</button>
