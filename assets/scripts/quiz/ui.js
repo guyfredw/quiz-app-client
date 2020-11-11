@@ -5,9 +5,12 @@ const onGetQuizzesSuccess = function (response) {
   // if the user does not have nay quizzes created
   if (response.quizzes.length === 0) {
     $('#update').text('You do not have any quizzes')
+    $('#display-quizzes').html('')
+    $('#display-quizzes').hide()
   } else {
-  // display all the quizzes
-  // clear the display quiz div
+    $('#display-quizzes').show()
+    // display all the quizzes
+    // clear the display quiz div
     $('#display-quizzes').html('')
     // set the height for the display
     $('#display-quizzes').css('height', '200px')
