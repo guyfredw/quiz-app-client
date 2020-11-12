@@ -82,6 +82,7 @@ const onShowQuizFail = function () {
 const displayQuiz = function (response) {
   $('#myTest').show()
   $('#show-quiz').html('')
+  $('#result').text('')
   $('#show-quiz').append(`
     <h5> ${response.quiz.text} </h5>
     <label for='false'>True</label>
